@@ -1,0 +1,13 @@
+#==========
+# Git ignore file 
+#==========
+
+# Virtual env
+venv/
+.venv/
+env/
+virt
+
+# Data bases
+db.sqlite3
+mydb.py
