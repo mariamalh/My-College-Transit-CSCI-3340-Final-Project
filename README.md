@@ -14,7 +14,7 @@ My College Transit is a web application that helps bridge the gap between on-cam
 
 ---
 
-### Agile Planning
+## Agile Planning
 **Sprint 1:**
 *  Set up Django project 
 *  Create GitHub repository 
