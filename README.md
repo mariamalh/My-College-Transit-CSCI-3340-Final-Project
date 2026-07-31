@@ -25,4 +25,5 @@ My College Transit is a web application that helps bridge the gap between on-cam
 ---
 ## Developers
 Mariam Alhroob
+
 Davidetta Komeyan
