@@ -27,3 +27,5 @@ My College Transit is a web application that helps bridge the gap between on-cam
 Mariam Alhroob
 
 Davidetta Komeyan
+
+Joaquin Barron
