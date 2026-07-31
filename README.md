@@ -21,3 +21,8 @@ My College Transit is a web application that helps bridge the gap between on-cam
 *  Create README file
 *  Decide on initial features 
 *  Split responsibilities
+
+---
+## Developers
+Mariam Alhroob
+Davidetta Komeyan
