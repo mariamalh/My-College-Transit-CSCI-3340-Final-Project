@@ -15,13 +15,27 @@ My College Transit is a web application that helps bridge the gap between on-cam
 ---
 
 ## Agile Planning
-**Sprint 1:**
+**Sprint 1: Project Initialization & Foundation**
 *  Set up Django project 
 *  Create GitHub repository 
 *  Create README file
-*  Decide on initial features 
+*  Design application concept (My College Transit)
+*  Create initial Home Page
+*  Configure URL routing 
 *  Split responsibilities
 
+**Sprint 2: User Account Management**
+**Goal:** Allow users to securely create and manage accounts
+*  User Registration
+*  User Login
+*  User Logout
+*  User Profile Page
+*  Authentication & Authorization
+      . Protected profile page
+      . Login/Logout Redirect
+*  Dynamic Navigation
+      . Guest see **Login** anf **Register**
+      . Logged-in users see **Profile** and **Logout**
 ---
 ## Developers
 Mariam Alhroob
