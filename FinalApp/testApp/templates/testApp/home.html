@@ -1,3 +1,6 @@
+{% load static %}
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,26 +19,42 @@
 
         body {
             background: #f4f6f8;
+            color: #1f2933;
         }
 
         nav {
-            background: #003366;
+            background: #002855;
             color: white;
-            padding: 18px 30px;
+            padding: 16px 30px;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
-        .logo {
-            font-size: 26px;
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .nav-logo {
+            width: 65px;
+            height: 65px;
+            object-fit: contain;
+            background: white;
+            border-radius: 8px;
+            padding: 4px;
+        }
+
+        .site-name {
+            font-size: 25px;
             font-weight: bold;
         }
 
         nav ul {
             display: flex;
             list-style: none;
-            gap: 24px;
+            gap: 22px;
             align-items: center;
         }
 
@@ -46,7 +65,7 @@
         }
 
         nav a:hover {
-            color: #66c2ff;
+            color: #f15a24;
         }
 
         .nav-button {
@@ -59,52 +78,130 @@
         }
 
         .nav-button:hover {
-            color: #66c2ff;
+            color: #f15a24;
         }
 
         .hero {
-            text-align: center;
-            padding: 100px 20px;
+            min-height: calc(100vh - 97px);
+            display: flex;
+            align-items: center;
+            padding: 60px 30px;
         }
 
-        .hero h1 {
-            font-size: 48px;
-            color: #003366;
+        .hero-container {
+            width: 100%;
+            max-width: 1150px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: 52px;
+            line-height: 1.1;
+            color: #002855;
+            margin-bottom: 22px;
+        }
+
+        .hero-text h1 span {
+            color: #f15a24;
+        }
+
+        .hero-text p {
+            font-size: 20px;
+            line-height: 1.6;
+            color: #4b5563;
             margin-bottom: 20px;
         }
 
-        .hero p {
-            font-size: 21px;
-            color: #555;
-            max-width: 800px;
-            margin: auto;
-            line-height: 1.5;
-        }
-
-        .button {
-            display: inline-block;
-            margin-top: 35px;
-            padding: 15px 35px;
-            background: #0077cc;
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            font-size: 18px;
-        }
-
-        .button:hover {
-            background: #005fa3;
-            color: white;
-        }
-
         .user-message {
-            margin-top: 25px;
-            color: #003366;
-            font-size: 18px;
+            color: #002855;
             font-weight: bold;
         }
 
-        @media (max-width: 850px) {
+        .button-group {
+            display: flex;
+            gap: 15px;
+            margin-top: 28px;
+            flex-wrap: wrap;
+        }
+
+        .primary-button,
+        .secondary-button {
+            display: inline-block;
+            padding: 14px 28px;
+            border-radius: 7px;
+            text-decoration: none;
+            font-size: 17px;
+            font-weight: bold;
+        }
+
+        .primary-button {
+            background: #f15a24;
+            color: white;
+        }
+
+        .primary-button:hover {
+            background: #d9480f;
+        }
+
+        .secondary-button {
+            background: #002855;
+            color: white;
+        }
+
+        .secondary-button:hover {
+            background: #001d3d;
+        }
+
+        .hero-logo-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-logo {
+            width: 100%;
+            max-width: 500px;
+            object-fit: contain;
+            filter: drop-shadow(0 16px 20px rgba(0, 0, 0, 0.18));
+        }
+
+        .features {
+            background: white;
+            padding: 60px 30px;
+        }
+
+        .features-container {
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .feature-card {
+            background: #f4f6f8;
+            border-top: 5px solid #f15a24;
+            border-radius: 10px;
+            padding: 28px;
+            text-align: center;
+            box-shadow: 0 5px 16px rgba(0, 0, 0, 0.08);
+        }
+
+        .feature-card h2 {
+            color: #002855;
+            margin-bottom: 12px;
+        }
+
+        .feature-card p {
+            color: #5b6573;
+            line-height: 1.5;
+        }
+
+        @media (max-width: 900px) {
             nav {
                 flex-direction: column;
                 gap: 18px;
@@ -115,8 +212,47 @@
                 justify-content: center;
             }
 
-            .hero h1 {
-                font-size: 36px;
+            .hero-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .button-group {
+                justify-content: center;
+            }
+
+            .hero-text h1 {
+                font-size: 40px;
+            }
+
+            .hero-logo {
+                max-width: 390px;
+            }
+
+            .features-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 520px) {
+            .logo-area {
+                flex-direction: column;
+            }
+
+            .site-name {
+                font-size: 21px;
+            }
+
+            nav ul {
+                gap: 14px;
+            }
+
+            .hero-text h1 {
+                font-size: 34px;
+            }
+
+            .hero-text p {
+                font-size: 18px;
             }
         }
     </style>
@@ -125,8 +261,16 @@
 <body>
 
 <nav>
-    <div class="logo">
-        🚌 My College Transit
+    <div class="logo-area">
+        <img
+            src="{% static 'testApp/images/mct-logo.png' %}"
+            alt="My College Transit logo"
+            class="nav-logo"
+        >
+
+        <div class="site-name">
+            My College Transit
+        </div>
     </div>
 
     <ul>
@@ -176,31 +320,98 @@
 </nav>
 
 <section class="hero">
-    <h1>Welcome to My College Transit</h1>
+    <div class="hero-container">
 
-    <p>
-        My College Transit helps students, faculty, and staff locate
-        campus and city transportation quickly and efficiently.
-        View nearby transit information and stay informed with live updates.
-    </p>
+        <div class="hero-text">
+            <h1>
+                Your Campus.
+                <span>Your Transit.</span>
+                Your Connection.
+            </h1>
 
-    {% if user.is_authenticated %}
+            <p>
+                My College Transit helps students, faculty, and staff find
+                campus and city transportation quickly and efficiently.
+            </p>
 
-        <p class="user-message">
-            Welcome back, {{ user.username }}!
-        </p>
+            <p>
+                View nearby transit information, check routes, and stay
+                connected with transportation updates.
+            </p>
 
-        <a href="{% url 'profile' %}" class="button">
-            View Profile
-        </a>
+            {% if user.is_authenticated %}
 
-    {% else %}
+                <p class="user-message">
+                    Welcome back, {{ user.username }}!
+                </p>
 
-        <a href="{% url 'register' %}" class="button">
-            Create an Account
-        </a>
+                <div class="button-group">
+                    <a href="{% url 'profile' %}" class="primary-button">
+                        View Profile
+                    </a>
 
-    {% endif %}
+                    <a href="#" class="secondary-button">
+                        View Routes
+                    </a>
+                </div>
+
+            {% else %}
+
+                <div class="button-group">
+                    <a href="{% url 'register' %}" class="primary-button">
+                        Create an Account
+                    </a>
+
+                    <a href="{% url 'login' %}" class="secondary-button">
+                        Log In
+                    </a>
+                </div>
+
+            {% endif %}
+        </div>
+
+        <div class="hero-logo-wrapper">
+            <img
+                src="{% static 'testApp/images/mct-logo.png' %}"
+                alt="MCT university transit logo"
+                class="hero-logo"
+            >
+        </div>
+
+    </div>
+</section>
+
+<section class="features">
+    <div class="features-container">
+
+        <div class="feature-card">
+            <h2>Campus Routes</h2>
+
+            <p>
+                Find transportation routes that connect major campus
+                buildings, parking areas, and student locations.
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <h2>City Transit</h2>
+
+            <p>
+                Connect campus transportation with nearby public transit
+                options for easier travel beyond the university.
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <h2>Transit Updates</h2>
+
+            <p>
+                Stay informed about route changes, delays, and important
+                transportation announcements.
+            </p>
+        </div>
+
+    </div>
 </section>
 
 </body>

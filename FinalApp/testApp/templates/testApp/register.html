@@ -1,8 +1,11 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Register | My College Transit</title>
 
     <style>
@@ -17,14 +20,29 @@
         }
 
         nav {
-            background: #003366;
-            color: white;
-            padding: 18px 30px;
+            background: #002855;
+            padding: 14px 28px;
         }
 
-        nav a {
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .nav-logo {
+            width: 48px;
+            height: 48px;
+            object-fit: contain;
+            background: white;
+            border-radius: 8px;
+            padding: 3px;
+        }
+
+        .site-name {
             color: white;
             text-decoration: none;
+            font-size: 23px;
             font-weight: bold;
         }
 
@@ -34,12 +52,12 @@
             margin: 60px auto;
             background: white;
             padding: 35px;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+            border-radius: 12px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
         }
 
         h1 {
-            color: #003366;
+            color: #002855;
             text-align: center;
             margin-bottom: 25px;
         }
@@ -71,7 +89,7 @@
         button {
             width: 100%;
             padding: 13px;
-            background: #0077cc;
+            background: #f15a24;
             color: white;
             border: none;
             border-radius: 6px;
@@ -80,7 +98,7 @@
         }
 
         button:hover {
-            background: #005fa3;
+            background: #d9480f;
         }
 
         .login-link {
@@ -89,7 +107,7 @@
         }
 
         .login-link a {
-            color: #0077cc;
+            color: #002855;
             text-decoration: none;
             font-weight: bold;
         }
@@ -99,7 +117,17 @@
 <body>
 
 <nav>
-    <a href="{% url 'home' %}">🚌 My College Transit</a>
+    <div class="logo-area">
+        <img
+            src="{% static 'testApp/images/mct-logo.png' %}"
+            alt="My College Transit logo"
+            class="nav-logo"
+        >
+
+        <a href="{% url 'home' %}" class="site-name">
+            My College Transit
+        </a>
+    </div>
 </nav>
 
 <div class="container">
@@ -107,10 +135,11 @@
 
     <form method="POST">
         {% csrf_token %}
-
         {{ form.as_p }}
 
-        <button type="submit">Register</button>
+        <button type="submit">
+            Register
+        </button>
     </form>
 
     <p class="login-link">
